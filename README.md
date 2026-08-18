@@ -29,7 +29,7 @@ Then open `http://localhost:3000`.
 
 ## Shopify connector
 
-The Shopify connector uses Shopify's GraphQL Admin API. Shopify's current stable Admin API version is `2026-07`; the connector keeps the version configurable through `SHOPIFY_API_VERSION`. citeturn0search1turn0search4
+The connector uses Shopify's GraphQL Admin API. The default version is `2026-07` and can be changed with `SHOPIFY_API_VERSION`.
 
 Copy `.env.example` to `.env` and set:
 
@@ -48,7 +48,7 @@ GET /api/shopify/analyze
 
 The endpoint returns a store-level SEO score plus product and collection findings for missing/out-of-range SEO titles and descriptions and shallow product descriptions.
 
-**Security:** never commit a Shopify access token. The token must stay server-side. For a production public app, replace the development environment-token flow with Shopify OAuth/session handling and request only the scopes the app needs. Shopify recommends GraphQL Admin API for new public apps; the REST Admin API is legacy. citeturn0search3turn0search4
+**Security:** never commit a Shopify access token. The token must stay server-side. For a production public app, replace the development environment-token flow with Shopify OAuth/session handling and request only the scopes the app needs.
 
 ## Product direction
 
