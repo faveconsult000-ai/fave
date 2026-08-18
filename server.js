@@ -1,5 +1,6 @@
 import http from 'node:http';
 import { URL } from 'node:url';
+import { analyzeShopifyStore } from './shopify.js';
 
 const PORT = Number(process.env.PORT || 3000);
 
@@ -58,6 +59,9 @@ http.createServer(async (req, res) => {
     if (url.pathname === '/api/analyze') {
       if (!url.searchParams.get('url')) return json(res, 400, { error: 'Provide a URL to analyze.' });
       return json(res, 200, await analyze(url.searchParams.get('url')));
+    }
+    if (url.pathname === '/api/shopify/analyze') {
+      return json(res, 200, await analyzeShopifyStore());
     }
     if (url.pathname === '/' || url.pathname === '/index.html') {
       res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' });
