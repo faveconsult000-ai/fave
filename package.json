@@ -1,0 +1,13 @@
+{
+  "name": "fave-smart-seo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Smart SEO command center for ecommerce pages and product content.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
